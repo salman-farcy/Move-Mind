@@ -5,11 +5,43 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="output.css">
      <title>Move-Mind</title>
+     <script type="module" src="index.js"></script>
 </head>
 <body>
-     <h1 class="text-3xl font-bold ">Move Mind</h1>
-     <h1 class="text-4xl font-bold ">Move Mind</h1>
-     <h1 class="text-1xl font-bold ">Move Mind</h1>
+     <div class="flex flex-col">
+          <nav class="bg-black text-white p-4">
+               <h1 class="text-3xl font-bold ">Move Mind</h1>
+          </nav>
+
+          <div class="flex justify-around py-4">
+               <div class="card" id="tMoveId">
+                    <span>100</span>
+               </div>
+
+               <div class="card" id="tAvgRatingId">
+                    <span>40.5</span>
+               </div>
+
+               <div class="card" id="tReviewsId">
+                    <span>53</span>
+               </div>
+          </div>
+
+          <div class="py-4" id="movieListId">
+               <h2 class="text-2xl">Move Reviews</h2>
+
+               <ul class="my-2">
+                    <li class="my-2 card p-2">
+                         <p class="text-xl mb-2">Avater - 2.7</p>
+                         <p class="mb-2">Test - 1</p>
+                         <p class="mb-2">Test - 2</p>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+               </ul>
+          </div>
+     </div>
      
 </body>
 </html>
