@@ -1,11 +1,11 @@
 import { getMovieReviewData } from "./data.js";
-
+let sortDesc = false;
 
 function init() {
      const movieReviewData = getMovieReviewData();
      console.log(movieReviewData);
 
-
+     registerHandler(movieReviewData);
      paintStatistics(movieReviewData);
      paintMovieData(movieReviewData);
 }
@@ -37,15 +37,37 @@ function addStat(elem, value) {
      spanEl.innerText = value;
      elem.appendChild(spanEl);
 }
+
 function paintMovieData(movieReviewData) {
      const flatReviewData = movieReviewData.flat();
+     const sorted = flatReviewData.toSorted((a, b) => b.on - a.on)
      const movieListEl = document.querySelector("#movieListId UL")
 
 
-     flatReviewData.map((movie) => {
-          console.log(movie);
+     addMoveReviewData(movieListEl, sorted)
+}
 
+function registerHandler(movieReviewData) {
+     const sortBtn = document.getElementById("srtById");
+     sortBtn.addEventListener("click", () => sortByReview(movieReviewData))
+}
 
+function sortByReview(movieReviewData) {
+     sortDesc = !sortDesc;
+     const flatReviewData = movieReviewData.flat();
+
+     let sortReviewData = sortDesc
+          ? flatReviewData.toSorted((a, b) => b.rating - a.rating)
+          : flatReviewData.toSorted((a, b) => a.rating - b.rating);
+
+     const movieListEl = document.querySelector("#movieListId UL");
+
+     removeAllChildNodes(movieListEl);
+     addMoveReviewData(movieListEl, sortReviewData);
+};
+
+function addMoveReviewData(movieListEl, movieReview) {
+     movieReview.map((movie) => {
           const liElem = document.createElement("li");
           liElem.classList.add("card", "p-2", "my-2");
 
@@ -64,11 +86,14 @@ function paintMovieData(movieReviewData) {
           byElem.innerText = `By ${movie.by} on ${new Intl.DateTimeFormat('en-Bn').format(movie.on)}`;
           liElem.appendChild(byElem);
 
-
           movieListEl.appendChild(liElem);
-     })
+     });
+}
 
-     
+function removeAllChildNodes(parent) {
+     while (parent.firstChild) {
+          parent.removeChild(parent.firstChild)
+     }
 }
 
 init();

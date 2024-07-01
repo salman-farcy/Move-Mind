@@ -13,10 +13,18 @@ const movieReviewData = [
          "id": '663a0a05bfe65e5778eedf58',
          "title": "The Avengers",
          "content": 'Great movie! Will watch again.',
-         "rating": 5,
+         "rating": 3,
          "by": "Kiran K",
          "on": 1718076747000
-       }
+       },
+       {
+        "id": '663a0a05bfe65e5778eedf58',
+        "title": "The Avengers",
+        "content": 'Great movie! Will watch again.',
+        "rating": 2,
+        "by": "Kiran K",
+        "on": 1718508775000
+      }
      ],
      [
        {
