@@ -34,7 +34,23 @@ const movieReviewData = [
          "rating": 5,
          "by": "Akram K",
          "on": 1718508775000
-       }
+       },
+       {
+        "id": '664acd311387e2ad2e8be48b',
+        "title": "Interstellar",
+        "content": 'What a movie, super scifi',
+        "rating": 2.3,
+        "by": "salman farcy",
+        "on": 1718508775000
+      },
+       {
+        "id": '664acd311387e2ad2e8be48b',
+        "title": "Interstellar",
+        "content": 'What a movie, super scifi',
+        "rating": 3.5,
+        "by": "rakib hasan",
+        "on": 1718508775000
+      }
      ]
    ];
 
